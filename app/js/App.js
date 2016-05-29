@@ -2,6 +2,8 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Header from './components/Header';
+import Card from './components/Card';
 import Calculator from './components/Calculator';
 import GraphInterestPaid from './components/GraphInterestPaid';
 
@@ -59,7 +61,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <h1>Loan Calculator</h1>
+                <Header />
                 <Calculator
                     inputChange={this.inputChange}
                     balance={this.state.balance}
@@ -67,7 +69,9 @@ class App extends React.Component {
                     payment={this.state.payment}
                     handleRepaymentData={this.handleRepaymentData}
                 />
-                <GraphInterestPaid balance={this.state.balance} data={this.state.repayment} />
+                <Card title="Interest Paid">
+                    <GraphInterestPaid balance={this.state.balance} data={this.state.repayment} />
+                </Card>
             </div>
         )
     }
