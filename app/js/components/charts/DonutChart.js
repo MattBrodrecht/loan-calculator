@@ -3,6 +3,7 @@
 import React from 'react';
 import d3 from 'd3';
 import DonutChartPath from './DonutChartPath';
+import DonutChartLegend from './DonutChartLegend';
 
 class DonutChart extends React.Component {
 
@@ -12,9 +13,7 @@ class DonutChart extends React.Component {
     }
 
     componentWillMount() {
-        var _self=this;
-
-        console.log(d3);
+        let _self = this;
 
         this.pie=d3.layout.pie()
             .value(function(d){return d[_self.props.point]})
@@ -33,6 +32,7 @@ class DonutChart extends React.Component {
             <div>
                 <svg id={this.props.id} width={this.props.width} height={this.props.height}>
                     <DonutChartPath width={this.props.width} height={this.props.height} innerRadiusRatio={this.props.innerRadiusRatio} pie={this.pie} color={this.color} data={this.props.data}></DonutChartPath>
+                    <DonutChartLegend pie={this.pie} color={this.color} data={this.props.data} width={this.state.width} height={this.props.height} label={this.props.label} radius={3}/>
                 </svg>
             </div>
         );
