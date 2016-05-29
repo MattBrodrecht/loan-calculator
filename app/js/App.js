@@ -3,6 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Calculator from './components/Calculator';
+import GraphInterestPaid from './components/GraphInterestPaid';
 
 class App extends React.Component {
 
@@ -66,6 +67,7 @@ class App extends React.Component {
                     payment={this.state.payment}
                     handleRepaymentData={this.handleRepaymentData}
                 />
+                <GraphInterestPaid balance={this.state.balance} data={this.state.repayment} />
             </div>
         )
     }

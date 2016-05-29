@@ -23,16 +23,15 @@ const helpers = {
             months++;
             totalInterest += charge;
 
-            breakdown.push({
-                interest: _roundDecimal(charge),
-                balance: _roundDecimal(balance)
-            })
+            balance = (balance < 0) ? 0 : balance;
+
+            breakdown.push(_roundDecimal(balance));
         }
 
         months = Math.ceil(months);
         totalInterest = _roundDecimal(totalInterest);
 
-        return { months, totalInterest };
+        return { months, totalInterest, breakdown };
     }
 
 }

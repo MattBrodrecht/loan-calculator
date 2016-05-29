@@ -76,7 +76,7 @@ gulp.task(`watch`, () => {
 });
 
 gulp.task(`build`,(callback) => {
-    runSequence('clean', [`js`,`sass`], callback);
+    runSequence('clean', ['js','sass'], callback);
 });
 
 gulp.task(`default`, (callback) => {
