@@ -30,7 +30,7 @@ class DonutChart extends React.Component {
 
         return (
             <div>
-                <svg id={this.props.id} width={this.props.width} height={this.props.height}>
+                <svg id={this.props.id} width={`100%`} height={this.props.height}>
                     <DonutChartPath width={this.props.width} height={this.props.height} innerRadiusRatio={this.props.innerRadiusRatio} pie={this.pie} color={this.color} data={this.props.data}></DonutChartPath>
                     <DonutChartLegend pie={this.pie} color={this.color} data={this.props.data} width={this.state.width} height={this.props.height} label={this.props.label} radius={3}/>
                 </svg>
