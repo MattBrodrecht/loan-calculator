@@ -64,13 +64,15 @@ class App extends React.Component {
                 <Header />
                 <div className="dashboard">
                     <section className="calculator">
-                        <Calculator
-                            inputChange={this.inputChange}
-                            balance={this.state.balance}
-                            interest={this.state.interest}
-                            payment={this.state.payment}
-                            handleRepaymentData={this.handleRepaymentData}
-                        />
+                        <Card>
+                            <Calculator
+                                inputChange={this.inputChange}
+                                balance={this.state.balance}
+                                interest={this.state.interest}
+                                payment={this.state.payment}
+                                handleRepaymentData={this.handleRepaymentData}
+                            />
+                        </Card>
                     </section>
                     <section className="cards">
                         <Card title="Interest Paid">

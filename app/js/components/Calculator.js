@@ -32,7 +32,7 @@ class Calculator extends React.Component {
 
     render() {
         return (
-            <form className="calculator" noValidate onSubmit={this.handleSubmit}>
+            <form className="calculator-form" noValidate onSubmit={this.handleSubmit}>
                 <div className="form-input">
                     <label htmlFor="balance">Total Debt:</label>
                     <input id="balance" type="number" value={this.props.balance} onChange={this.handleChange} />
