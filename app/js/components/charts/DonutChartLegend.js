@@ -23,7 +23,7 @@ class DonutChartLegend extends React.Component {
             const textStyle = {
                 fill: _self.props.color(index)
             };
-            console.log(dataSet.data.count);
+            
             return (
                 <g transform={transform} key={index}>
 

@@ -30,8 +30,6 @@ class App extends React.Component {
 
         // Check local storage & update state
         if (localStorageRef) {
-            console.log(JSON.parse(localStorageRef));
-
             this.setState(
                 JSON.parse(localStorageRef)
             );

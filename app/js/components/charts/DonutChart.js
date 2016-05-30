@@ -1,5 +1,10 @@
 'use strict';
 
+/*
+ * D3 Donut Chart boilerplate code from the following tutorial
+ * https://github.com/adeveloperdiary/react-d3-charts
+ */
+
 import React from 'react';
 import d3 from 'd3';
 import DonutChartPath from './DonutChartPath';
