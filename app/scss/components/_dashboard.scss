@@ -1,0 +1,25 @@
+.dashboard {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+
+    @media(min-width: 800px) {
+        display: flex;
+    }
+
+    & > section {
+        width: 100%;
+
+        @media(min-width: 800px) {
+            &.calculator {
+                width: 35%;
+                margin-right: 5%;
+            }
+            &.cards {
+                width: 70%;
+            }
+        }
+    }
+
+}
+

@@ -1,0 +1,32 @@
+form {
+
+    .form-input {
+        margin-bottom: 1.5rem;
+    }
+
+    label {
+        padding: 0 0 .5rem;
+        display: block;
+    }
+
+    input {
+        display: block;
+        padding: .5rem;
+        width: 100%;
+        border: 1px solid $off-white;
+        border-radius: 2px;
+    }
+
+    input[type="submit"] {
+        background: $primary-color;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            background: $primary-color-hover;
+        }
+    }
+}

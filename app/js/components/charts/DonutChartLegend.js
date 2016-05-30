@@ -29,7 +29,7 @@ class DonutChartLegend extends React.Component {
 
                     <rect width="20" height="20" style={rectStyle} rx={_self.props.radius} ry={_self.props.radius}></rect>
 
-                    <text x="30" y="15" className="browser-legend" style={textStyle}>
+                    <text x="30" y="15" className="browser-legend">
                         {`${dataSet.data[_self.props.label]} - $${dataSet.data.count}`}
                     </text>
                 </g>

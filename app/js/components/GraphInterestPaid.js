@@ -26,7 +26,7 @@ class GraphInterestPaid extends React.Component {
             }
         ]
 
-        const color = ['#64b0cc','#e5c072'];
+        const color = ['#484C58', '#D8674C'];
 
         return (
             <DonutChart id="bs_chart" data={data} color={color} height={300} width={500} enable3d={true} innerRadiusRatio={3} label="name" point="count"></DonutChart>
