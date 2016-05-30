@@ -37,7 +37,21 @@ const helpers = {
     totalExpense: (principal, interest) => {
         const total = parseFloat(principal) + parseFloat(interest);
         console.log(total);
-        return total;
+        return `$${total}`;
+    },
+
+    monthsToYears: (months) => {
+        let years = 0;
+
+        if (months >= 12) {
+            years = Math.floor(months / 12);
+            years = (years > 1) ? `${years} years` : `${years} year`;
+            months = months % 12;
+            months = (months > 1) ? `${months} months` : `${months} month`;
+        }
+
+        return `${years}, ${months}`;
+
     }
 
 }
