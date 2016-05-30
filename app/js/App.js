@@ -62,16 +62,22 @@ class App extends React.Component {
         return (
             <div>
                 <Header />
-                <Calculator
-                    inputChange={this.inputChange}
-                    balance={this.state.balance}
-                    interest={this.state.interest}
-                    payment={this.state.payment}
-                    handleRepaymentData={this.handleRepaymentData}
-                />
-                <Card title="Interest Paid">
-                    <GraphInterestPaid balance={this.state.balance} data={this.state.repayment} />
-                </Card>
+                <div className="dashboard">
+                    <section className="calculator">
+                        <Calculator
+                            inputChange={this.inputChange}
+                            balance={this.state.balance}
+                            interest={this.state.interest}
+                            payment={this.state.payment}
+                            handleRepaymentData={this.handleRepaymentData}
+                        />
+                    </section>
+                    <section className="cards">
+                        <Card title="Interest Paid">
+                            <GraphInterestPaid balance={this.state.balance} data={this.state.repayment} />
+                        </Card>
+                    </section>
+                </div>
             </div>
         )
     }

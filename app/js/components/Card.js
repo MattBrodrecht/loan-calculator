@@ -13,7 +13,9 @@ class Card extends React.Component {
         return (
             <div className="card">
                 <h2>{this.props.title}</h2>
-                {this.props.children}
+                <div className="card-content">
+                    {this.props.children}
+                </div>
             </div>
         );
     }
