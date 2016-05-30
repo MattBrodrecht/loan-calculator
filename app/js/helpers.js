@@ -36,12 +36,12 @@ const helpers = {
 
     totalExpense: (principal, interest) => {
         const total = parseFloat(principal) + parseFloat(interest);
-        console.log(total);
-        return `$${total}`;
+
+        return (isNaN(total)) ? null : `$${total}`;
     },
 
     monthsToYears: (months) => {
-        let years = 0;
+        let years;
 
         if (months >= 12) {
             years = Math.floor(months / 12);
@@ -50,7 +50,8 @@ const helpers = {
             months = (months > 1) ? `${months} months` : `${months} month`;
         }
 
-        return `${years}, ${months}`;
+        // If this is undefined - we won't want to render the component
+        return (years && months) ? `${years}, ${months}` : null;
 
     }
 
