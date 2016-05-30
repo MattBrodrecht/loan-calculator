@@ -2,7 +2,7 @@
 
 
 const _roundDecimal = (number) => {
-    return Math.round(number * 100) / 100;
+    return number.toFixed(2);
 }
 
 const helpers = {
