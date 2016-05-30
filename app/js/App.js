@@ -81,12 +81,14 @@ class App extends React.Component {
                         </Card>
                     </section>
                     <section className="cards">
-                        <Card title="Total Cost" size="two-col">
-                            <CardData data={helpers.totalExpense(this.state.balance, this.state.repayment.totalInterest)} />
-                        </Card>
-                        <Card title="Repayment Time" size="two-col">
-                            <CardData data={helpers.monthsToYears(this.state.repayment.months)} />
-                        </Card>
+                        <div className="row">
+                            <Card title="Total Cost" size="two-col">
+                                <CardData data={helpers.totalExpense(this.state.balance, this.state.repayment.totalInterest)} />
+                            </Card>
+                            <Card title="Time Until Freedom" size="two-col">
+                                <CardData data={helpers.monthsToYears(this.state.repayment.months)} />
+                            </Card>
+                        </div>
                         <Card title="Interest Paid">
                             <GraphInterestPaid balance={this.state.balance} data={this.state.repayment} />
                         </Card>
