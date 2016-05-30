@@ -6,6 +6,8 @@ import Header from './components/Header';
 import Card from './components/Card';
 import Calculator from './components/Calculator';
 import GraphInterestPaid from './components/GraphInterestPaid';
+import CardData from './components/CardData';
+import helpers from './helpers';
 
 class App extends React.Component {
 
@@ -52,6 +54,10 @@ class App extends React.Component {
         });
     }
 
+    /*
+     * Updates state from Calculator user input
+     * @param {object} data - repayment info (total interest paid, time to repay, repayment breakdown)
+     */
     handleRepaymentData(data) {
         this.setState({
             repayment: data
@@ -75,6 +81,9 @@ class App extends React.Component {
                         </Card>
                     </section>
                     <section className="cards">
+                        <Card title="Total Cost to Loan" size="two-col">
+                            <CardData data={helpers.totalExpense(this.state.balance, this.state.repayment.totalInterest)} />
+                        </Card>
                         <Card title="Interest Paid">
                             <GraphInterestPaid balance={this.state.balance} data={this.state.repayment} />
                         </Card>

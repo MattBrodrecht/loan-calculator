@@ -32,6 +32,12 @@ const helpers = {
         totalInterest = _roundDecimal(totalInterest);
 
         return { months, totalInterest, breakdown };
+    },
+
+    totalExpense: (principal, interest) => {
+        const total = parseFloat(principal) + parseFloat(interest);
+        console.log(total);
+        return total;
     }
 
 }
