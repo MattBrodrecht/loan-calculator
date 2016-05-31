@@ -42,7 +42,7 @@ const helpers = {
     totalExpense: (principal, interest) => {
         const total = parseFloat(principal) + parseFloat(interest);
 
-        return (isNaN(total)) ? null : `$${total}`;
+        return (isNaN(total)) ? null : `$${_roundDecimal(total)}`;
     },
 
     monthsToYears: (months) => {
