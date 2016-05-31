@@ -21,8 +21,8 @@ class CardData extends React.Component {
 
 }
 
-CardData.PropTypes = {
-    data: React.PropTypes.number.isRequired
+CardData.propTypes = {
+    data: React.PropTypes.string
 }
 
 export default CardData;

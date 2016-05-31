@@ -43,7 +43,7 @@ class DonutChartPath extends React.Component {
     }
 }
 
-DonutChartPath.PropTypes = {
+DonutChartPath.propTypes = {
     width:React.PropTypes.number,
     height:React.PropTypes.number,
     data:React.PropTypes.array,

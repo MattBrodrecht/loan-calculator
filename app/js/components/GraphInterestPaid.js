@@ -35,9 +35,9 @@ class GraphInterestPaid extends React.Component {
 
 }
 
-GraphInterestPaid.PropTypes = {
-    balance: React.PropTypes.number.isRequired,
-    data: React.PropTypes.array.isRequired
+GraphInterestPaid.propTypes = {
+    balance: React.PropTypes.string.isRequired,
+    data: React.PropTypes.object.isRequired
 }
 
 export default GraphInterestPaid;

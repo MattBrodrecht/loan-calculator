@@ -45,7 +45,7 @@ class DonutChart extends React.Component {
 
 }
 
-DonutChart.PropTypes = {
+DonutChart.propTypes = {
     width:React.PropTypes.number,
     height:React.PropTypes.number,
     padAngle:React.PropTypes.number,

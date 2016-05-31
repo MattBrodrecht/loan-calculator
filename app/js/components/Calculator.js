@@ -51,11 +51,11 @@ class Calculator extends React.Component {
     }
 }
 
-Calculator.PropTypes = {
+Calculator.propTypes = {
     inputChange: React.PropTypes.func,
-    balance: React.PropTypes.number.isRequired,
-    interest: React.PropTypes.number.isRequired,
-    payment: React.PropTypes.number.isRequired,
+    balance: React.PropTypes.string.isRequired,
+    interest: React.PropTypes.string.isRequired,
+    payment: React.PropTypes.string.isRequired,
     handleRepaymentData: React.PropTypes.func
 }
 

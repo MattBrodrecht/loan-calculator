@@ -23,7 +23,7 @@ class DonutChartLegend extends React.Component {
             const textStyle = {
                 fill: _self.props.color(index)
             };
-            
+
             return (
                 <g transform={transform} key={index}>
 
@@ -53,7 +53,7 @@ class DonutChartLegend extends React.Component {
     }
 }
 
-DonutChartLegend.Proptypes = {
+DonutChartLegend.proptypes = {
     width:React.PropTypes.number,
     height:React.PropTypes.number,
     data:React.PropTypes.array,
