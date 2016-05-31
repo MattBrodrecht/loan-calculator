@@ -26,6 +26,11 @@ const helpers = {
             balance = (balance < 0) ? 0 : balance;
 
             breakdown.push(_roundDecimal(balance));
+
+            if (months === 192) {
+                alert(`15 Years is a long time - try upping your monthly payment if you want to be free sooner`);
+                break;
+            }
         }
 
         months = Math.ceil(months);
