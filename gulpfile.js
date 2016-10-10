@@ -9,12 +9,16 @@ const sass = require('gulp-sass');
 const browserify = require('browserify');
 const babelify = require('babelify');
 const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
 const runSequence = require('run-sequence');
 const del = require('del');
+const environments = require('gulp-environments');
 
 
 const appPath = './app';
 const buildPath = './public';
+const development = environments.development;
+const production = environments.production;
 
 
 gulp.task('clean', () => {
@@ -49,24 +53,26 @@ gulp.task(`js`, () => {
             this.emit('end');
         })
         .pipe(source('bundle.js'))
+        .pipe(production(buffer()))
+        .pipe(production(uglify()))
         .pipe(gulp.dest(path))
-        .pipe(browserSync.reload({
+        .pipe(development(browserSync.reload({
             stream: true
-        }));
+        })));
 });
 
 gulp.task(`sass`, () => {
     let dest = `${buildPath}/css`;
 
     return gulp.src(`${appPath}/scss/*.scss`)
-        .pipe(sourcemaps.init())
+        .pipe(development(sourcemaps.init()))
         .pipe(sass({outputStyle: `compressed`}))
         .pipe(autoprefixer())
-        .pipe(sourcemaps.write())
+        .pipe(development(sourcemaps.write()))
         .pipe(gulp.dest(dest))
-        .pipe(browserSync.reload({
+        .pipe(development(browserSync.reload({
             stream: true
-        }));
+        })));
 });
 
 gulp.task(`watch`, () => {
@@ -75,10 +81,16 @@ gulp.task(`watch`, () => {
     gulp.watch([`${buildPath}/index.html`], [`bs-reload`]);
 });
 
-gulp.task(`build`,(callback) => {
+gulp.task(`build`, (callback) => {
     runSequence('clean', ['js','sass'], callback);
 });
 
-gulp.task(`default`, (callback) => {
-    runSequence(`build`, [`browserSync`], `watch`, callback);
+gulp.task(`deploy`, () => {
+  environments.current(production);
+  runSequence(`build`);
+});
+
+gulp.task(`default`, () => {
+  environments.current(development);
+  runSequence(`build`, [`browserSync`], `watch`);
 });

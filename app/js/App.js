@@ -88,7 +88,7 @@ class App extends React.Component {
                             </Card>
                         </div>
                         <Card title="Interest Paid">
-                            <GraphInterestPaid balance={this.state.balance} data={this.state.repayment} />
+                            <GraphInterestPaid principal={this.state.balance} data={this.state.repayment} />
                         </Card>
                     </section>
                 </div>
