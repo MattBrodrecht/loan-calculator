@@ -54,11 +54,13 @@ const helpers = {
         months = months % 12;
         months = (months > 1) ? `${months} Months` : `${months} Month`;
         total = `${years}, ${months}`;
-      } else {
+      } else if (months) {
         months = (months > 1) ? `${months} Months` : `${months} Month`;
         total = months;
+      } else {
+        total = '';
       }
-      
+
       return total;
     }
 
