@@ -12,13 +12,13 @@ class GraphInterestPaid extends React.Component {
 
     render() {
 
-        const balance = this.props.balance || 0;
+        const principal = this.props.principal || 0;
         const totalInterest = this.props.data.totalInterest || 0;
 
         const data = [
             {
-                'name': 'Balance',
-                'count': balance
+                'name': 'Principal',
+                'count': principal
             },
             {
                 'name': 'Interest',
@@ -36,7 +36,7 @@ class GraphInterestPaid extends React.Component {
 }
 
 GraphInterestPaid.propTypes = {
-    balance: React.PropTypes.string.isRequired,
+    principal: React.PropTypes.string.isRequired,
     data: React.PropTypes.object.isRequired
 }
 
